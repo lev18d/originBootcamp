@@ -1,0 +1,11 @@
+.card{
+    width: 200px;
+    height: 100px;
+    margin: 1em;
+    border: 1px black;
+    display:inline-block;
+    background-image: url("./Memorygameimages/texture.jpg") ;
+}
+.body{
+    background-image: image(https://i.ytimg.com/vi/2bNZr5zRAjM/maxresdefault.jpg);
+}
