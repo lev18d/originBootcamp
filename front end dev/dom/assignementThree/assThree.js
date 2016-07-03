@@ -22,11 +22,14 @@ function cardCreator() {
     
     var idList = ['1', '2', '3', '4', '5', '6', '1', '2', '3', '4', '5', '6'];
     idList = shuffle(idList);
+    var cardCollection = document.createElement('div');
+        cardCollection.className = "cardCollection";
+
     for (var x = 0; x < idList.length; x++) {
 
-
         var cardElement = document.createElement('div');
-        document.body.appendChild(cardElement);
+        // var cardCollection = document.createElement('div').className = "cardCollection";
+        cardCollection.appendChild(cardElement);
 
 
         cardElement.className = "card no-match-found";
@@ -34,6 +37,7 @@ function cardCreator() {
         cardElement.addEventListener("click", cardClicked);
 
     }
+    document.body.appendChild(cardCollection);
 }
 
     function cardClicked(e) {
@@ -51,6 +55,7 @@ function cardCreator() {
                 firstCard.className = "card";
                 theCardBeingClicked.className = "card";
                 if (document.getElementsByClassName("no-match-found").length === 0) {
+                    rewinder();
                     alert("you won");
                 }
             } else {
@@ -68,6 +73,10 @@ function cardCreator() {
     cardCreator();
     document.body.style.background = "#f3f3f3 url('./Memorygameimages/bg.jpg') no-repeat right top";
 
+    function rewinder(){
+    document.getElementsByClassName("bekindrewind").style.display = "inline-block";
+
+    }
 
 
 

@@ -1,6 +1,8 @@
 .card{
+    background-size: cover;
+    background-position: center;
     width: 200px;
-    height: 100px;
+    height: 200px;
     margin: 1em;
     border: 1px black;
     display:inline-block;
@@ -27,4 +29,16 @@ margin-bottom: 47px;
     border-radius: 9px;
     height: 40px;
     width: 140px;
+}
+
+
+
+.bekindrewind{
+    display: none;
+}
+.cardCollection{
+    max-width: 925px;
+    text-align: center;
+    align-content: center;
+    margin: 0 25% 0 25%;
 }
