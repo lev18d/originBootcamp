@@ -17,6 +17,9 @@ function shuffle(a) {
     return a;
 }
 function cardCreator() {
+    //first remove any cards which might be on the board from previous game
+    $(".card").remove();
+    
     var idList = ['1', '2', '3', '4', '5', '6', '1', '2', '3', '4', '5', '6'];
     idList = shuffle(idList);
     for (var x = 0; x < idList.length; x++) {
@@ -29,7 +32,7 @@ function cardCreator() {
         cardElement.className = "card no-match-found";
         cardElement.setAttribute("data-img", "./Memorygameimages/" + idList[x] + ".jpg");
         cardElement.addEventListener("click", cardClicked);
-        
+
     }
 }
 
@@ -47,8 +50,8 @@ function cardCreator() {
                 // do nothing, because the image is staying there already
                 firstCard.className = "card";
                 theCardBeingClicked.className = "card";
-                if (document.getElementsByClassName("no-match-found").length == 0) {
-                    alert("you won")
+                if (document.getElementsByClassName("no-match-found").length === 0) {
+                    alert("you won");
                 }
             } else {
                 setTimeout(function () {

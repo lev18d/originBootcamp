@@ -15,3 +15,16 @@
 .container-fluid{
 margin-bottom: 47px;
 }
+
+
+.playagain{
+    margin-left: 1507px;
+    margin-top: 40px;
+    color: white;
+    background-color: maroon;
+    font-family: calibri;
+    font-size: 20px;
+    border-radius: 9px;
+    height: 40px;
+    width: 140px;
+}
