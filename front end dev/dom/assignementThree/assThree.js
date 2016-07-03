@@ -19,7 +19,7 @@ function shuffle(a) {
 function cardCreator() {
     //first remove any cards which might be on the board from previous game
     $(".card").remove();
-    
+
     var idList = ['1', '2', '3', '4', '5', '6', '1', '2', '3', '4', '5', '6'];
     idList = shuffle(idList);
     var cardCollection = document.createElement('div');
@@ -56,7 +56,7 @@ function cardCreator() {
                 theCardBeingClicked.className = "card";
                 if (document.getElementsByClassName("no-match-found").length === 0) {
                     rewinder();
-                    alert("you won");
+
                 }
             } else {
                 setTimeout(function () {
@@ -74,9 +74,10 @@ function cardCreator() {
     document.body.style.background = "#f3f3f3 url('./Memorygameimages/bg.jpg') no-repeat right top";
 
     function rewinder(){
-    document.getElementsByClassName("bekindrewind").style.display = "inline-block";
-
+    document.getElementsByClassName("bekindrewind")[0].style.display = "inline-block";
+        cardCreator();
     }
 
 
+// $(".bekindrewind").remove();
 

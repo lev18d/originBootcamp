@@ -35,6 +35,16 @@ margin-bottom: 47px;
 
 .bekindrewind{
     display: none;
+    margin-left: 873px;
+    margin-top: 40px;
+    color: white;
+    background-color: red;
+    font-family: calibri;
+    font-size: 20px;
+    border-radius: 9px;
+    height: 40px;
+    width: 140px;
+
 }
 .cardCollection{
     max-width: 925px;
