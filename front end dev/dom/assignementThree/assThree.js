@@ -19,6 +19,8 @@ function shuffle(a) {
 function cardCreator() {
     //first remove any cards which might be on the board from previous game
     $(".card").remove();
+    // $(".bekindrewind").remove();
+
 
     var idList = ['1', '2', '3', '4', '5', '6', '1', '2', '3', '4', '5', '6'];
     idList = shuffle(idList);
@@ -79,5 +81,4 @@ function cardCreator() {
     }
 
 
-// $(".bekindrewind").remove();
 
