@@ -17,50 +17,53 @@ function shuffle(a) {
     return a;
 }
 function cardCreator() {
-    var idList = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12','1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'];
+    var idList = ['1', '2', '3', '4', '5', '6', '1', '2', '3', '4', '5', '6'];
     idList = shuffle(idList);
     for (var x = 0; x < idList.length; x++) {
+
+
         var cardElement = document.createElement('div');
         document.body.appendChild(cardElement);
+
+
         cardElement.className = "card no-match-found";
-        cardElement.setAttribute("data-img", "./Memorygameimages/" + idList[x] + ".jpg")
-        cardElement.addEventListener("click",cardClicked);
-
+        cardElement.setAttribute("data-img", "./Memorygameimages/" + idList[x] + ".jpg");
+        cardElement.addEventListener("click", cardClicked);
+        
     }
 }
 
-function cardClicked(e) {
-    var theCardBeingClicked = e.target;
-    theCardBeingClicked.style.backgroundImage = "url('" + theCardBeingClicked.getAttribute("data-img") + "')"
+    function cardClicked(e) {
+        var theCardBeingClicked = e.target;
+        theCardBeingClicked.style.backgroundImage = "url('" + theCardBeingClicked.getAttribute("data-img") + "')";
 
-    var firstCard = document.getElementById("first-card");
-    //var secondCard = document.getElementById("second-card");
-    if (firstCard == null){
-        theCardBeingClicked.id = "first-card";
-    }else{
-        firstCard.id = "";
-        if(firstCard.getAttribute("data-img") == theCardBeingClicked.getAttribute("data-img")){
-            // do nothing, because the image is staying there already
-            firstCard.className = "card";
-            theCardBeingClicked.className = "card";
-            if (document.getElementsByClassName("no-match-found").length==0){
-                alert("you won")
+        var firstCard = document.getElementById("first-card");
+        //var secondCard = document.getElementById("second-card");
+        if (firstCard == null) {
+            theCardBeingClicked.id = "first-card";
+        } else {
+            firstCard.id = "";
+            if (firstCard.getAttribute("data-img") == theCardBeingClicked.getAttribute("data-img")) {
+                // do nothing, because the image is staying there already
+                firstCard.className = "card";
+                theCardBeingClicked.className = "card";
+                if (document.getElementsByClassName("no-match-found").length == 0) {
+                    alert("you won")
+                }
+            } else {
+                setTimeout(function () {
+                    theCardBeingClicked.style.backgroundImage = "";
+                    firstCard.style.backgroundImage = "";
+
+                }, 1000)
             }
-        }else{
-            setTimeout(function(){
-                theCardBeingClicked.style.backgroundImage = "";
-                firstCard.style.backgroundImage = "";
-
-            },1000)
         }
+
     }
-
-}
-
 
 
     cardCreator();
-document.body.style.background = "#f3f3f3 url('https://i.ytimg.com/vi/2bNZr5zRAjM/maxresdefault.jpg') no-repeat right top";
+    document.body.style.background = "#f3f3f3 url('./Memorygameimages/bg.jpg') no-repeat right top";
 
 
 
