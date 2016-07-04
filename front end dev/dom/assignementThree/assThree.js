@@ -57,7 +57,7 @@ function cardCreator() {
                 firstCard.className = "card";
                 theCardBeingClicked.className = "card";
                 if (document.getElementsByClassName("no-match-found").length === 0) {
-                    rewinder();
+                    document.getElementsByClassName("bekindrewind")[0].style.display = "inline-block";
 
                 }
             } else {
@@ -72,13 +72,12 @@ function cardCreator() {
     }
 
 
-    cardCreator();
+
     document.body.style.background = "#f3f3f3 url('./Memorygameimages/bg.jpg') no-repeat right top";
 
     function rewinder(){
-    document.getElementsByClassName("bekindrewind")[0].style.display = "inline-block";
-        cardCreator();
+        window.location.reload();
     }
 
-
+window.onload=cardCreator();
 
